@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Produtos</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- ÁREA DO SWITCH DE PARCERIA -->
+        <div class="header-parceria">
+            <span class="parceria-label">Parceria:</span>
+            <label class="switch">
+                <input type="checkbox" id="chkParceria" onchange="atualizarTela()">
+                <span class="slider round"></span>
+            </label>
+            <span id="statusParceria" class="status-texto">Desativado</span>
+        </div>
+
+        <!-- LISTA DE PRODUTOS DISPONÍVEIS -->
+        <div class="lista-produtos" id="listaProdutos">
+            <!-- Os produtos serão inseridos aqui via JavaScript -->
+        </div>
+
+        <!-- PAINEL DO CARRINHO / RESUMO -->
+        <div class="painel-carrinho">
+            <table class="tabela-carrinho">
+                <thead>
+                    <tr>
+                        <th>Qtd</th>
+                        <th>Produto</th>
+                        <th>Valor und.</th>
+                        <th>Sub Total</th>
+                    </tr>
+                </thead>
+                <tbody id="corpoTabelaCarrinho">
+                    <!-- Itens adicionados aparecerão aqui -->
+                </tbody>
+            </table>
+
+            <div class="rodape-total">
+                TOTAL = R$ <span id="valorTotal">0,00</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
