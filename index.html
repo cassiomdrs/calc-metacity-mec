@@ -9,19 +9,23 @@
 <body>
 
     <div class="container">
-        <!-- ÁREA DO SWITCH DE PARCERIA -->
-        <div class="header-parceria">
-            <span class="parceria-label">Parceria:</span>
-            <label class="switch">
-                <input type="checkbox" id="chkParceria" onchange="atualizarTela()">
-                <span class="slider round"></span>
-            </label>
-            <span id="statusParceria" class="status-texto">Desativado</span>
+        <!-- ÁREA DO SWITCH DE PARCERIA E BOTÃO DE NOVA VENDA -->
+        <div class="header-acoes">
+            <div class="header-parceria">
+                <span class="parceria-label">Parceria:</span>
+                <label class="switch">
+                    <input type="checkbox" id="chkParceria" onchange="atualizarTela()">
+                    <span class="slider round"></span>
+                </label>
+                <span id="statusParceria" class="status-texto">Desativado</span>
+            </div>
+
+            <button class="btn-reset" onclick="resetarSistema()"> Nova Venda</button>
         </div>
 
         <!-- LISTA DE PRODUTOS DISPONÍVEIS -->
         <div class="lista-produtos" id="listaProdutos">
-            <!-- Os produtos serão inseridos aqui via JavaScript -->
+            <!-- Os produtos são inseridos aqui via JavaScript -->
         </div>
 
         <!-- PAINEL DO CARRINHO / RESUMO -->
@@ -40,8 +44,17 @@
                 </tbody>
             </table>
 
-            <div class="rodape-total">
-                TOTAL = R$ <span id="valorTotal">0,00</span>
+            <!-- PAINEL DE TOTAIS -->
+            <div class="resumo-valores">
+                <div class="card-total">
+                    TOTAL = R$ <span id="valorTotal">0</span>
+                </div>
+
+                <!-- TABELA DO VALOR DO PAINEL (40%) -->
+                <div class="card-painel">
+                    <span class="label-painel">VALOR PARA DEPOSITAR NO PAINEL (40%)</span>
+                    <span class="valor-painel">R$ <span id="valorPainel">0</span></span>
+                </div>
             </div>
         </div>
     </div>

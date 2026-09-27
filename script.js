@@ -1,4 +1,4 @@
-// Catálogo dos produtos (mesmos dados do seu esboço)
+// Catálogo dos produtos
 const produtos = [
     { id: 1, nome: "KIT REPARO", precoSem: 10000, precoCom: 7000 },
     { id: 2, nome: "CHAVE INGLESA", precoSem: 3000, precoCom: 2000 },
@@ -8,12 +8,12 @@ const produtos = [
     { id: 6, nome: "REMOÇÃO DE TUNING", precoSem: 60000, precoCom: 40000 }
 ];
 
-// Mapeamento das quantidades no carrinho: { idProduto: quantidade }
-const carrinho = {};
+// Mapeamento das quantidades no carrinho
+let carrinho = {};
 
-// Função para formatar valores numéricos em moeda (Ex: 10000 -> 10.000,00)
+// Função para formatar valores no padrão brasileiro de milhares (Ex: 40000 -> 40.000)
 function formatarMoeda(valor) {
-    return valor.toLocaleString('pt-BR', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
+    return valor.toLocaleString('pt-BR');
 }
 
 // Renderiza a lista de produtos na interface
@@ -54,6 +54,13 @@ function alterarQuantidade(idProduto, mudanca) {
     atualizarTela();
 }
 
+// Reseta todo o sistema para uma nova venda
+function resetarSistema() {
+    carrinho = {};
+    document.getElementById('chkParceria').checked = false;
+    atualizarTela();
+}
+
 // Atualiza a interface e recalcula os totais em tempo real
 function atualizarTela() {
     const temParceria = document.getElementById('chkParceria').checked;
@@ -73,7 +80,6 @@ function atualizarTela() {
         const id = parseInt(idStr);
         const produto = produtos.find(p => p.id === id);
         
-        // Seleciona o preço correto com base no estado do interruptor
         const precoUnitario = temParceria ? produto.precoCom : produto.precoSem;
         const subtotal = precoUnitario * qtd;
         totalGeral += subtotal;
@@ -89,8 +95,12 @@ function atualizarTela() {
         corpoTabela.innerHTML += linha;
     }
 
-    // Atualiza o valor TOTAL final na tela
+    // Cálculo do valor do painel (40% do total)
+    const valorDepositoPainel = totalGeral * 0.40;
+
+    // Atualiza os valores na tela
     document.getElementById('valorTotal').textContent = formatarMoeda(totalGeral);
+    document.getElementById('valorPainel').textContent = formatarMoeda(valorDepositoPainel);
 }
 
 // Inicializa a aplicação
