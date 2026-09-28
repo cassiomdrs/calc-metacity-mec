@@ -11,6 +11,9 @@ body {
     display: flex;
     justify-content: center;
     padding: 10px;
+
+    /* Impede duplo toque de zoom em toda a página */
+    touch-action: manipulation;
 }
 
 .container {
