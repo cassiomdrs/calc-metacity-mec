@@ -4,8 +4,7 @@ const produtos = [
     { id: 2, nome: "CHAVE INGLESA", precoSem: 3000, precoCom: 2000 },
     { id: 3, nome: "PNEU", precoSem: 5000, precoCom: 3000 },
     { id: 4, nome: "RASTREADOR", precoSem: 10000, precoCom: 7000 },
-    { id: 5, nome: "KIT DRIFT", precoSem: 10000, precoCom: 7000 },
-    { id: 6, nome: "REMOÇÃO DE TUNING", precoSem: 60000, precoCom: 40000 }
+    { id: 5, nome: "RESET TUNINGS", precoSem: 60000, precoCom: 40000 }
 ];
 
 // Mapeamento das quantidades no carrinho
