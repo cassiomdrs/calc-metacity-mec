@@ -10,6 +10,7 @@ Agilizar o atendimento ao cliente dentro do jogo, eliminando erros manuais de c�
 
 Com esta ferramenta, o mecânico consegue:
 - Alternar instantaneamente os preços entre clientes comuns e parceiros.
+- Aplicar automaticamente a regra de brindes (a partir de 20 unidades do mesmo item, ganha a metade arredondada para baixo).
 - Calcular subtotais e totais em tempo real.
 - Visualizar exatamente quanto deve ser depositado no **Painel da Oficina (40%)**.
 - Utilizar a interface de forma confortável diretamente pelo Smartphone ou computador enquanto joga.
@@ -18,9 +19,10 @@ Com esta ferramenta, o mecânico consegue:
 
 ## 🚀 Funcionalidades
 
+- **Regra de Brinde Inteligente:** Adicionou 20 ou mais do mesmo item? O sistema calcula o brinde dividindo por 2 (arredondando para baixo se for ímpar) e exibe diretamente na listagem do carrinho.
 - **Alternador de Parceria (Toggle):** Muda os preços de todos os produtos com apenas um clique (Com Parceria / Sem Parceria).
 - **Adição/Remoção Rápida:** Botões `+` e `-` otimizados para toque no Smartphone.
-- **Tabela de Resumo:** Exibe a quantidade, produto, valor unitário e subtotal em tempo real.
+- **Tabela de Resumo:** Exibe a quantidade, produto, valor unitário, subtotal e os brindes correspondentes em tempo real.
 - **Cálculo Automático de Depósito:** Exibe automaticamente o valor correspondente a **40% do total** a ser depositado no painel da oficina.
 - **Botão Nova Venda:** Limpa o carrinho e reseta os controlos para o próximo atendimento de forma imediata.
 
@@ -42,5 +44,5 @@ Com esta ferramenta, o mecânico consegue:
 ## 💻 Tecnologias Utilizadas
 
 - **HTML5:** Estruturação da página.
-- **CSS3:** Design escuro estilo dashboard e suporte a layout responsivo (*Mobile First*).
-- **JavaScript (Vanilla):** Lógica dos cálculos e atualização da interface em tempo real.
+- **CSS3:** Design escuro original estilo dashboard e suporte a layout responsivo (*Mobile First*).
+- **JavaScript (Vanilla):** Lógica dos cálculos, gestão de brindes e atualização da interface em tempo real.

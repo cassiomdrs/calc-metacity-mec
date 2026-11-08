@@ -84,7 +84,8 @@ function atualizarTela() {
         const subtotal = precoUnitario * qtd;
         totalGeral += subtotal;
 
-        const linha = `
+        // Linha principal do item comprado
+        let linha = `
             <tr>
                 <td>${qtd}x</td>
                 <td>${produto.nome}</td>
@@ -92,6 +93,18 @@ function atualizarTela() {
                 <td>${formatarMoeda(subtotal)}</td>
             </tr>
         `;
+
+        // Regra de Brinde: Se quantidade for 20 ou mais, calcula o brinde (metade arredondada para baixo)
+        if (qtd >= 20) {
+            const qtdBrinde = Math.floor(qtd / 2);
+            linha += `
+                <tr class="linha-brinde">
+                    <td>🎁 ${qtdBrinde}x</td>
+                    <td colspan="3">BRINDE (${produto.nome})</td>
+                </tr>
+            `;
+        }
+
         corpoTabela.innerHTML += linha;
     }
 
@@ -105,3 +118,4 @@ function atualizarTela() {
 
 // Inicializa a aplicação
 renderizarProdutos();
+atualizarTela();
